@@ -14,21 +14,22 @@ interface IApplicant {
 interface IApplicantDetails {
   id: string;
   name: string;
-  role: string;
-  avatar: string;
-  status: string;
-  matchPercentage: number;
-  location: string;
-  experience: string;
-  website: string;
+  title: string;
+  match: number;
+  avatarUrl: string;
+  openToWork: boolean;
+  openToProjects: boolean;
   about: string;
+  location: string;
+  yearsExperience: number;
+  website: string;
+  developerAccounts: { provider: string; handle: string }[];
   skills: string[];
   customFields: {
-      id: number;
-      question: string;
-      answer: string;
-      date: string;
+    question: string;
+    answers: { author: string; date: string; text: string }[];
   }[];
 }
 
 export type { IApplicant, IApplicantDetails };
+

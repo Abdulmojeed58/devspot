@@ -1,5 +1,5 @@
 "use client";
-import { useParams } from "next/navigation";
+
 import ApplicantBanner from "./applicant-banner";
 import StatusToggle from "./status-toggle";
 import AboutApplicant from "./about-applicant";
@@ -7,56 +7,26 @@ import DeveloperAccount from "./developer-account";
 import ApplicantCertifications from "./applicant-certifications";
 import ApplicantSkills from "./applicant-skills";
 import ApplicantCustomField from "./applicant-custom-field";
+import { IApplicantDetails } from "@/types/applicants-types";
+import { useState } from "react";
+import Pagination from "@/components/common/pagination";
 
-const applicantData = {
-  "russel-french": {
-    id: "russel-french",
-    name: "Russel French",
-    role: "Senior Developer",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces",
-    status: "Open to work",
-    matchPercentage: 76,
-    location: "San Francisco, United States",
-    experience: "5 years of experience",
-    website: "Website Title",
-    about:
-      "Russel is a web & mobile developer who is truly full-stack. His main skill is the Mobile app development with React Native. He has been a lead developer both in the backend and client applications, solutions engineer, and technical project manager. Back then, he pivots to web at Node.js and React.",
-    skills: ["React", "React Native", "JavaScript", "Node.js", "Python"],
-    customFields: [
-      {
-        id: 1,
-        question: "Describe your experience with CSS",
-        answer:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare bibendum tellus sed ipsum convallis pretium. Nullam et mi rutie dieam legesind. Integer vestibulum, orci tempor ipsum convallis pretium.",
-        date: "MAY 21, 2023 at 1:19PM",
-      },
-      {
-        id: 2,
-        question: "Describe your experience with CSS",
-        answer:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare bibendum tellus sed ipsum convallis pretium. Nullam et mi rutie dieam legesind. Integer vestibulum, orci tempor ipsum convallis pretium.",
-        date: "MAY 21, 2023 at 1:19PM",
-      },
-      {
-        id: 3,
-        question: "Name",
-        answer:
-          "Placerat et adipiscing molla lectus vulputate massa, sodamina. Nullam elit nulla placerat dignissim quam arcu.",
-        date: "MAY 21, 2023 at 1:19PM",
-      },
-    ],
-  },
-};
-
-const Applicant = () => {
-  const { id } = useParams<{ id: string }>();
-  const applicant = applicantData[String(id) as keyof typeof applicantData];
+const Applicant = ({ applicant }: { applicant: IApplicantDetails | null }) => {
+  const [openToWork, setOpenToWork] = useState(applicant?.openToWork || false);
+  const [openToProjects, setOpenToProjects] = useState(
+    applicant?.openToProjects || false
+  );
+  if (!applicant)
+    return <div className="text-red-500 p-8">Applicant not found.</div>;
 
   return (
     <div className="relative">
       {/* Hero Section with Gradient Background */}
-      <ApplicantBanner applicant={applicant} />
+      <ApplicantBanner
+        applicant={applicant}
+        openToWork={openToWork}
+        openToProjects={openToProjects}
+      />
 
       {/* Main Content */}
       <div className="p-6">
@@ -64,15 +34,16 @@ const Applicant = () => {
           {/* Left Column - Profile Info */}
           <div className="lg:col-span-1">
             <div className="grid gap-6">
-              <StatusToggle />
-
+              <StatusToggle
+                openToWork={openToWork}
+                setOpenToWork={setOpenToWork}
+                openToProjects={openToProjects}
+                setOpenToProjects={setOpenToProjects}
+              />
               <AboutApplicant applicant={applicant} />
-
-              <DeveloperAccount />
-
-              <ApplicantCertifications />
-
-              <ApplicantSkills />
+              <DeveloperAccount applicant={applicant} />
+              <ApplicantCertifications applicant={applicant} />
+              <ApplicantSkills applicant={applicant} />
             </div>
           </div>
 
@@ -80,6 +51,18 @@ const Applicant = () => {
           <div className="lg:col-span-2">
             <ApplicantCustomField applicant={applicant} />
           </div>
+        </div>
+      </div>
+
+      <div className="fixed bottom-0 left-0 right-0 flex justify-end items-center py-3 px-4 gap-8 bg-dev-card">
+        <Pagination />
+        <div className="flex gap-6 items-center">
+          <button className="px-3 md:px-4 py-2 border border-dev-border text-[#FF9330] rounded-lg hover:bg-dev-card-hover transition-colors flex items-center gap-2 bg-[#75421D] text-base md:text-lg font-semibold leading-8">
+            Reject
+          </button>
+          <button className="px-3 md:px-4 py-2 border border-dev-border text-white rounded-lg hover:bg-dev-card-hover transition-colors flex items-center gap-2 bg-color-gradient-purple-blue text-base md:text-lg font-semibold leading-8">
+            Accept
+          </button>
         </div>
       </div>
     </div>

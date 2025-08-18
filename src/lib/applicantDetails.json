@@ -27,5 +27,63 @@
         ]
       }
     ]
+  },
+  "ola-hopkins": {
+    "id": "ola-hopkins",
+    "name": "Ola Hopkins",
+    "title": "Associate Developer",
+    "match": 44,
+    "avatarUrl": "/avatars/russel.png",
+    "openToWork": true,
+    "openToProjects": false,
+    "about": "Ola is a web & mobile developer who is truly full-stack. His main skill is mobile app development with React Native...",
+    "location": "San Francisco, United States",
+    "yearsExperience": 5,
+    "website": "https://example.dev",
+    "developerAccounts": [
+      { "provider": "GitHub", "handle": "russel" },
+      { "provider": "Twitter", "handle": "@russel" }
+    ],
+    "customFields": [
+      {
+        "question": "Describe your experience with CSS",
+        "answers": [
+          {
+            "author": "Russel",
+            "date": "2020-05-21T13:00:00Z",
+            "text": "Placera ut adipiscing nulla lectus vulputate massa..."
+          }
+        ]
+      }
+    ]
+  },
+  "randall-swanson": {
+    "id": "randall-swanson",
+    "name": "Randall Swanson",
+    "title": "Senior Designer",
+    "match": 96,
+    "avatarUrl": "/avatars/russel.png",
+    "openToWork": true,
+    "openToProjects": false,
+    "about": "Randall is a web & mobile developer who is truly full-stack. His main skill is mobile app development with React Native...",
+    "location": "San Francisco, United States",
+    "yearsExperience": 5,
+    "website": "https://example.dev",
+    "developerAccounts": [
+      { "provider": "GitHub", "handle": "russel" },
+      { "provider": "Twitter", "handle": "@russel" }
+    ],
+    "customFields": [
+      {
+        "question": "Describe your experience with CSS",
+        "answers": [
+          {
+            "author": "Russel",
+            "date": "2020-05-21T13:00:00Z",
+            "text": "Placera ut adipiscing nulla lectus vulputate massa..."
+          }
+        ]
+      }
+    ]
   }
 }

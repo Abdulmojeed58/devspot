@@ -6,9 +6,10 @@ import {
   LinkedinIcon,
   StackoverflowIcon,
 } from "@/components/icons";
+import { IApplicantDetails } from "@/types/applicants-types";
 import Image from "next/image";
 
-const DeveloperAccount = () => {
+const DeveloperAccount = ({ applicant }: { applicant: IApplicantDetails }) => {
   return (
     <Card>
       <div>
@@ -16,7 +17,9 @@ const DeveloperAccount = () => {
           Developer Accounts
         </h3>
         <div className="grid gap-4 mt-4">
-          <DeveloperAccountItem icon={<LinkedinIcon />} title="LinkedIn" />
+          {applicant.developerAccounts.map((account) => (
+            <DeveloperAccountItem key={account.provider} icon={<LinkedinIcon />} title={account.provider} detail={{ label: "Handle", value: account.handle }} />
+          ))}
           <DeveloperAccountItem2
             icon={<GithubIcon />}
             title="GitHub"

@@ -7,12 +7,13 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
+  const { id } = context.params;
   const filePath = path.join(process.cwd(), 'src/lib/applicantDetails.json');
   const file = await fs.readFile(filePath, 'utf-8');
   const details: Record<string, IApplicantDetails> = JSON.parse(file);
-  const applicant = details[params.id];
+  const applicant = details[id];
 
   if (!applicant) {
     return new Response(JSON.stringify({ error: 'Applicant not found' }), {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CheckIcon, CrossIcon } from "@/components/icons";
 import { Card } from "@/components/common";
+import { IApplicantDetails } from "@/types/applicants-types";
 
 interface ToggleItemProps {
   label: string;
@@ -42,9 +43,14 @@ function ToggleItem({ label, isOn, onToggle }: ToggleItemProps) {
   );
 }
 
-export default function StatusToggle() {
-  const [openToWork, setOpenToWork] = useState(true);
-  const [openToProjects, setOpenToProjects] = useState(false);
+interface StatusToggleProps {
+  openToWork: boolean;
+  setOpenToWork: (openToWork: boolean) => void;
+  openToProjects: boolean;
+  setOpenToProjects: (openToProjects: boolean) => void;
+}
+
+export default function StatusToggle({ openToWork, setOpenToWork, openToProjects, setOpenToProjects }: StatusToggleProps) {
 
   return (
     <Card isSmall>
