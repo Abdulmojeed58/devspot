@@ -1,0 +1,33 @@
+const MapPinIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="20"
+      viewBox="0 0 18 20"
+      fill="none"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M16.5501 8.26C16.5501 13.9067 8.77507 18.7467 8.77507 18.7467C8.77507 18.7467 1 13.9067 1 8.26C1 4.25041 4.48102 1 8.77507 1C13.0691 1 16.5501 4.25041 16.5501 8.26V8.26Z"
+        stroke="#4E52F5"
+        strokeWidth="1.716"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <ellipse
+        cx="8.77479"
+        cy="8.25984"
+        rx="2.59169"
+        ry="2.42"
+        stroke="#4E52F5"
+        strokeWidth="1.716"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export default MapPinIcon;
