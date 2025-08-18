@@ -17,17 +17,17 @@ export default function MainLayout({ children }: LayoutProps) {
   const isApplicantsPage = pathname === "/applicants";
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 left-0 right-0 z-30 h-[76px] border-b border-dev-border bg-dev-card">
-        <div className="flex items-center px-4 py-[10px] h-[76px]">
+      <header className="sticky top-0 left-0 right-0 z-30 h-[64px] md:h-[76px] border-b border-dev-border bg-dev-card flex-shrink-0">
+        <div className="flex items-center px-4 py-2 md:py-[10px] h-[64px] md:h-[76px]">
           {/* Logo */}
-          <div className="flex items-center space-x-2 mr-32">
+          <div className="flex items-center space-x-2 mr-4 md:mr-32">
             <Logo />
           </div>
 
           {/* Search Bar */}
-          <div className="flex-1 max-w-[525px] mx-8 h-full">
+          <div className="flex-1 max-w-full md:max-w-[525px] mx-2 md:mx-8 h-full">
             <div className="relative h-full">
               <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-dev-text-muted w-4 h-4" />
               <input
@@ -39,25 +39,25 @@ export default function MainLayout({ children }: LayoutProps) {
           </div>
 
           {isApplicantsPage ? (
-            <div className="flex space-x-4 ml-auto h-full font-roboto">
-              <button className="px-4 py-2 bg-dev-primary text-white rounded-lg hover:bg-blue-600 transition-colors text-lg font-semibold leading-8">
+            <div className="hidden sm:flex space-x-2 md:space-x-4 ml-auto h-full font-roboto">
+              <button className="px-3 md:px-4 py-2 bg-dev-primary text-white rounded-lg hover:bg-blue-600 transition-colors text-base md:text-lg font-semibold leading-8">
                 Log in
               </button>
-              <button className="px-4 py-2 border border-dev-border text-white rounded-lg hover:bg-dev-card-hover transition-colors flex items-center gap-2 bg-color-gradient-purple-blue">
+              <button className="px-3 md:px-4 py-2 border border-dev-border text-white rounded-lg hover:bg-dev-card-hover transition-colors flex items-center gap-2 bg-color-gradient-purple-blue">
                 <PlusIcon />{" "}
-                <span className="text-lg font-semibold leading-8">
+                <span className="text-base md:text-lg font-semibold leading-8">
                   Host a hackathon
                 </span>
               </button>
             </div>
           ) : (
             // {/* Right Actions */}
-            <div className="flex items-center ml-auto gap-6">
+            <div className="flex items-center ml-auto gap-3 md:gap-6">
               <button className="text-dev-text-muted hover:text-dev-text">
                 <BellIcon />
               </button>
 
-              <div className="flex items-center px-3 min-w-[336px]">
+              <div className="hidden sm:flex items-center px-2 md:px-3 min-w-[120px] md:min-w-[336px]">
                 <div className="w-8 h-8 bg-dev-card rounded-full flex items-center justify-center">
                   <Image
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces"
@@ -67,9 +67,9 @@ export default function MainLayout({ children }: LayoutProps) {
                     height={48}
                   />
                 </div>
-                <div className="flex flex-col ml-3">
-                  <span className="text-white text-[18px] font-semibold leading-8">Russell French</span>
-                  <span className="text-sm font-medium leading-6 text-dev-text-muted">Senior Developer</span>
+                <div className="flex flex-col ml-2 md:ml-3">
+                  <span className="text-white text-[16px] md:text-[18px] font-semibold leading-8">Russell French</span>
+                  <span className="text-xs md:text-sm font-medium leading-6 text-dev-text-muted">Senior Developer</span>
                 </div>
                 <button className="ml-auto">
                   <ArrowDownIcon />
@@ -83,7 +83,7 @@ export default function MainLayout({ children }: LayoutProps) {
       {/* Sidebar + Main Content */}
       <div className="flex h-[calc(100vh-5rem)] overflow-hidden">
         {/* Sidebar */}
-        <div className="top-20 left-0 z-20 h-[calc(100vh-5rem)] w-[220px]">
+        <div className="top-20 left-0 z-20 h-[calc(100vh-5rem)] w-[220px] hidden md:block">
           {isApplicantsPage ? <MainSidebar /> : <ApplicantSidebar />}
         </div>
         {/* Main Content */}

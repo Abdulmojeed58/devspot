@@ -116,7 +116,7 @@ const applicants: IApplicant[] = [
 
 export default function Applicants() {
   return (
-      <div className="p-4 ml-[82px] pb-0 min-h-[calc(100vh-5rem)]">
+      <div className="p-4 md:ml-[60px] lg:ml-[70px] xl:ml-[82px] pb-0 min-h-[calc(100vh-5rem)]">
         <div className="flex items-center justify-between mb-11 mt-10">
           <h1 className="text-[24px] md:text-[32px] lg:text-[40px] font-bold text-white font-raleway">Applicants</h1>
         </div>
