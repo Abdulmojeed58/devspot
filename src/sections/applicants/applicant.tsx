@@ -9,8 +9,8 @@ import ApplicantSkills from "./applicant-skills";
 import ApplicantCustomField from "./applicant-custom-field";
 
 const applicantData = {
-  1: {
-    id: 1,
+  "russel-french": {
+    id: "russel-french",
     name: "Russel French",
     role: "Senior Developer",
     avatar:
@@ -51,7 +51,7 @@ const applicantData = {
 
 const Applicant = () => {
   const { id } = useParams<{ id: string }>();
-  const applicant = applicantData[Number(id) as keyof typeof applicantData];
+  const applicant = applicantData[String(id) as keyof typeof applicantData];
 
   return (
     <div className="relative">

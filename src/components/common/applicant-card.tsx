@@ -35,13 +35,13 @@ const ApplicantCard = ({ applicant }: { applicant: IApplicant }) => {
               <p className="text-[10px] sm:text-xs font-medium leading-3 text-[#89898C] font-roboto">{applicant.location}</p>
             </div>
           </div>
-          <span
-            className={`mt-2 sm:mt-0 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium leading-5 sm:leading-6 font-roboto self-center sm:self-auto ${
+          {applicant.decision !== "none" && <span
+            className={`mt-2 sm:mt-0 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium leading-5 sm:leading-6 font-roboto self-center sm:self-auto capitalize ${
               statusColors[applicant.decision]
             }`}
           >
-            {applicant.status}
-          </span>
+            {applicant.decision}
+          </span>}
         </div>
 
         {/* Skills */}

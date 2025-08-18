@@ -4,9 +4,10 @@ import MainSidebar from "./main-sidebar";
 import { ArrowDownIcon, BellIcon, PlusIcon, SearchIcon } from "@/components/icons";
 import { Logo } from "@/components/common";
 import Footer from "./footer";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import ApplicantSidebar from "./applicant-sidebar";
 import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,31 @@ interface LayoutProps {
 export default function MainLayout({ children }: LayoutProps) {
   const pathname = usePathname();
   const isApplicantsPage = pathname === "/applicants";
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
+  const debounceRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Update local state if URL changes (e.g., back/forward navigation)
+  useEffect(() => {
+    setSearch(searchParams.get("q") || "");
+  }, [searchParams]);
+
+  // Debounced update of URL query param
+  const onSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearch(value);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      const params = new URLSearchParams(Array.from(searchParams.entries()));
+      if (value) {
+        params.set("q", value);
+      } else {
+        params.delete("q");
+      }
+      router.replace(`${pathname}?${params.toString()}`);
+    }, 400);
+  }, [router, pathname, searchParams]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -32,6 +58,8 @@ export default function MainLayout({ children }: LayoutProps) {
               <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-dev-text-muted w-4 h-4" />
               <input
                 type="text"
+                value={search}
+                onChange={onSearchChange}
                 placeholder="Search for hackathons, companies, developers, events and discussions"
                 className="w-full bg-[#2B2B31] border border-[#424248] rounded-[12px] pl-10 pr-4 py-2 text-dev-text placeholder-dev-text-muted focus:outline-none focus:ring-2 focus:ring-dev-primary text-sm font-medium leading-6 h-full"
               />

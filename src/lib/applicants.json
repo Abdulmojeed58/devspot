@@ -1,0 +1,38 @@
+[
+  {
+    "id": "russel-french",
+    "name": "Russel French",
+    "title": "Senior Developer",
+    "location": "San Francisco, United States",
+    "status": "Applicant #4",
+    "match": 70,
+    "avatarUrl": "/avatars/russel.png",
+    "likes": 203,
+    "skills": ["React", "C++", "Skill", "+ 2 more"],
+    "decision": "none"
+  },
+  {
+    "id": "ola-hopkins",
+    "name": "Ola Hopkins",
+    "title": "Associate Developer",
+    "location": "Paris, France",
+    "status": "",
+    "match": 70,
+    "avatarUrl": "/avatars/russel.png",
+    "likes": 1080,
+    "skills": ["PHP", "Java", "Skill", "+ 1 more"],
+    "decision": "accepted"
+  },
+  {
+    "id": "randall-swanson",
+    "name": "Randall Swanson",
+    "title": "Senior Designer",
+    "location": "New York, United States",
+    "status": "",
+    "match": 70,
+    "avatarUrl": "/avatars/russel.png",
+    "likes": 1080,
+    "skills": ["Adobe"],
+    "decision": "pending"
+  }
+]

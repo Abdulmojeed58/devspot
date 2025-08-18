@@ -12,7 +12,7 @@ interface IApplicant {
 }
 
 interface IApplicantDetails {
-  id: number;
+  id: string;
   name: string;
   role: string;
   avatar: string;
