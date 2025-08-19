@@ -8,7 +8,7 @@
     "match": 92,
     "avatarUrl": "/avatars/russel.png",
     "likes": 203,
-    "skills": ["React Native", "iOS", "Android", "TypeScript"],
+    "skills": ["React Native", "iOS"],
     "decision": "accepted"
   },
   {
@@ -32,7 +32,7 @@
     "match": 77,
     "avatarUrl": "/avatars/randall.png",
     "likes": 320,
-    "skills": ["Figma", "Sketch", "Adobe XD", "Branding"],
+    "skills": ["Figma", "Sketch"],
     "decision": "pending"
   },
   {
