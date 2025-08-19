@@ -8,7 +8,7 @@ const ApplicantBanner = ({ applicant, openToWork, openToProjects }: { applicant:
     <div className="relative min-h-[180px] sm:min-h-[220px] md:min-h-[260px] lg:min-h-[300px] bg-banner bg-cover bg-center">
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="relative z-10 px-4 sm:px-8 md:px-[48px] py-6 sm:py-10 md:py-[59.5px] flex flex-col justify-center w-full">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 lg:gap-0 w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 lg:gap-0 w-full">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-[56px] w-full lg:w-auto">
             <Image
               src={applicant.avatarUrl}
@@ -39,11 +39,11 @@ const ApplicantBanner = ({ applicant, openToWork, openToProjects }: { applicant:
           </div>
 
           <div className="flex flex-col items-center lg:items-end text-center lg:text-right mt-4 lg:mt-0 w-full lg:w-auto lg:h-full">
-            <div className="text-white flex flex-col lg:items-end lg:justify-between">
+            <div className="text-white flex flex-col lg:items-end lg:justify-between lg:gap-14">
               <div className="text-lg sm:text-2xl md:text-[32px] font-bold leading-normal font-raleway">
                 Applicant #{applicant.applicantId}
               </div>
-              <div className="flex items-center justify-center lg:justify-end gap-2 sm:gap-[12px] mt-2 lg:mt-8">
+              <div className="flex items-center justify-center lg:justify-end gap-2 sm:gap-[12px] mt-2 lg:mt-0">
                 <TokenIcon />
                 <span className="text-xl sm:text-3xl md:text-[40px] font-bold leading-normal font-raleway">100</span>
               </div>
