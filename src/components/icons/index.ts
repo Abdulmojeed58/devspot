@@ -25,3 +25,4 @@ export { default as CompanyIcon } from "./company-icon";
 export { default as DevIcon } from "./dev-icon";
 export { default as ChevronLeftIcon } from "./chevron-left-icon";
 export { default as ChevronRightIcon } from "./chevron-right-icon";
+export { default as UserIcon } from "./user-icon";

@@ -13,6 +13,7 @@ interface IApplicant {
 
 interface IApplicantDetails {
   id: string;
+  applicantId: number;
   name: string;
   title: string;
   match: number;

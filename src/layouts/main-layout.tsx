@@ -1,19 +1,21 @@
 "use client";
 import { ReactNode } from "react";
 import MainSidebar from "./main-sidebar";
-import { ArrowDownIcon, BellIcon, PlusIcon, SearchIcon } from "@/components/icons";
+import { ArrowDownIcon, BellIcon, PlusIcon, SearchIcon, UserIcon } from "@/components/icons";
 import { Logo, Button } from "@/components/common";
 import Footer from "./footer";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import ApplicantSidebar from "./applicant-sidebar";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { IApplicantDetails } from "@/types/applicants-types";
 
 interface LayoutProps {
   children: ReactNode;
+  applicant?: IApplicantDetails | null;
 }
 
-export default function MainLayout({ children }: LayoutProps) {
+export default function MainLayout({ children, applicant }: LayoutProps) {
   const pathname = usePathname();
   const isApplicantsPage = pathname === "/applicants";
   const router = useRouter();
@@ -87,17 +89,17 @@ export default function MainLayout({ children }: LayoutProps) {
 
               <div className="hidden sm:flex items-center px-2 md:px-3 min-w-[120px] md:min-w-[336px]">
                 <div className="w-8 h-8 bg-dev-card rounded-full flex items-center justify-center">
-                  <Image
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces"
-                    alt="name"
+                 {applicant?.avatarUrl ? <Image
+                    src={applicant?.avatarUrl}
+                    alt={applicant?.name || "name"}
                     className="rounded-full object-cover"
                     width={48}
                     height={48}
-                  />
+                  /> : <UserIcon />}
                 </div>
                 <div className="flex flex-col ml-2 md:ml-3">
-                  <span className="text-white text-[16px] md:text-[18px] font-semibold leading-8">Russell French</span>
-                  <span className="text-xs md:text-sm font-medium leading-6 text-dev-text-muted">Senior Developer</span>
+                  <span className="text-white text-[16px] md:text-[18px] font-semibold leading-8">{applicant?.name || "--"}</span>
+                  <span className="text-xs md:text-sm font-medium leading-6 text-dev-text-muted">{applicant?.title || "--"}</span>
                 </div>
                 <button className="ml-auto">
                   <ArrowDownIcon />

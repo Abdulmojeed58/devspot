@@ -38,12 +38,12 @@ const ApplicantBanner = ({ applicant, openToWork, openToProjects }: { applicant:
             </div>
           </div>
 
-          <div className="flex flex-col items-center lg:items-end text-center lg:text-right mt-4 lg:mt-0 w-full lg:w-auto">
-            <div className="text-white">
+          <div className="flex flex-col items-center lg:items-end text-center lg:text-right mt-4 lg:mt-0 w-full lg:w-auto lg:h-full">
+            <div className="text-white flex flex-col lg:items-end lg:justify-between">
               <div className="text-lg sm:text-2xl md:text-[32px] font-bold leading-normal font-raleway">
-                Applicant #{applicant.id}
+                Applicant #{applicant.applicantId}
               </div>
-              <div className="flex items-center justify-center lg:justify-end gap-2 sm:gap-[12px] mt-2">
+              <div className="flex items-center justify-center lg:justify-end gap-2 sm:gap-[12px] mt-2 lg:mt-8">
                 <TokenIcon />
                 <span className="text-xl sm:text-3xl md:text-[40px] font-bold leading-normal font-raleway">100</span>
               </div>
