@@ -14,6 +14,7 @@ function ToggleItem({ label, isOn, onToggle }: ToggleItemProps) {
     <div className="flex items-center gap-[20px]">
       <button
         onClick={onToggle}
+        aria-label={label}
         className={`relative w-[40px] h-[20px] rounded-full transition-colors duration-200 ${
           isOn ? "bg-blue-500" : "bg-gray-500"
         }`}
