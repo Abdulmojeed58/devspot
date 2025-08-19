@@ -2,8 +2,8 @@ import { Card } from "@/components/common";
 import { IApplicantDetails } from "@/types/applicants-types";
 
 const ApplicantSkills = ({ applicant }: { applicant: IApplicantDetails }) => {
-  const skills = applicant.customFields.filter(field => field.question === "Skills");
-  const technologies = applicant.customFields.filter(field => field.question === "Technologies");
+  const skills = applicant.skills;
+  const technologies = applicant.technologies;
   return (
     <Card>
       <div className="grid gap-4">
@@ -11,13 +11,13 @@ const ApplicantSkills = ({ applicant }: { applicant: IApplicantDetails }) => {
         <div>
           <h4 className="text-sm font-medium leading-6 font-roboto text-dev-text-muted">Experience</h4>
           <div className="flex flex-wrap gap-4 mt-4">
-            {skills.map((skill) => (
+            {skills.map((skill, index) => (
               <div 
-                key={skill.question}
+                key={index}
                 className="py-2 px-4 bg-[#2B2B31] rounded-[40px] max-w-max"
               >
                 <div className="text-sm font-medium leading-6 font-roboto text-[#E7E7E8]">
-                    {skill.answers.map((answer) => answer.text).join(", ")} 
+                    {skill} 
                 </div>
               </div>
             ))}
@@ -27,13 +27,13 @@ const ApplicantSkills = ({ applicant }: { applicant: IApplicantDetails }) => {
         <div>
           <h4 className="text-sm font-medium leading-6 font-roboto text-dev-text-muted">Technologies</h4>
           <div className="flex flex-wrap gap-4 mt-4">
-            {technologies.map((technology) => (
+            {technologies.map((technology, index) => (
               <div
-                key={technology.answers[0].text}
+                key={index}
                 className="py-2 px-4 bg-[#2B2B31] rounded-[40px] max-w-max"
               >
                 <div className="text-sm font-medium leading-6 font-roboto text-[#E7E7E8]">
-                  {technology.answers[0].text}
+                  {technology}
                 </div>
               </div>
             ))}

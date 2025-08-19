@@ -10,6 +10,14 @@ import { IApplicantDetails } from "@/types/applicants-types";
 import Image from "next/image";
 
 const DeveloperAccount = ({ applicant }: { applicant: IApplicantDetails }) => {
+
+  const getIcon = (provider: string) => {
+    switch (provider) {
+      case "GitHub": return <GithubIcon />;
+      case "LinkedIn": return <LinkedinIcon />;
+      case "Stack Overflow": return <StackoverflowIcon />;
+    }
+  }
   return (
     <Card>
       <div>
@@ -18,27 +26,16 @@ const DeveloperAccount = ({ applicant }: { applicant: IApplicantDetails }) => {
         </h3>
         <div className="grid gap-4 mt-4">
           {applicant.developerAccounts.map((account) => (
-            <DeveloperAccountItem key={account.provider} icon={<LinkedinIcon />} title={account.provider} detail={{ label: "Handle", value: account.handle }} />
+            <>
+            {
+              account.details ? (
+                <DeveloperAccountItem2 key={account.provider} icon={getIcon(account.provider)} title={account.provider} detail={account.details} />
+              ) : (
+                <DeveloperAccountItem key={account.provider} icon={getIcon(account.provider)} title={account.provider} detail={{ label: "Handle", value: account.handle }} />
+              )
+            }
+            </>
           ))}
-          <DeveloperAccountItem2
-            icon={<GithubIcon />}
-            title="GitHub"
-            detail={[
-              { label: "Public Repos", value: "12" },
-              { label: "Followers", value: "12" },
-              { label: "Following", value: "12" },
-            ]}
-          />
-          <DeveloperAccountItem2
-            icon={<StackoverflowIcon />}
-            title="Stack Overflow"
-            detail={[
-              { label: "Badges", value: "25" },
-              { label: "Upvotes", value: "5.2K" },
-              { label: "Answers", value: "124" },
-              { label: "Questions", value: "56" },
-            ]}
-          />
           <DeveloperAccountItem
             icon={<CompanyIcon />}
             title="HackerRank"

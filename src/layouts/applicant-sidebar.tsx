@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "Discover", href: "", icon: <DiscoverIcon /> },
+  { label: "Discover", href: "/applicants", icon: <DiscoverIcon /> },
   { label: "Hackathons", href: "", icon: <StarIcon /> },
   { label: "People", href: "", icon: <PeopleIcon /> },
   { label: "Bounties", href: "", icon: <BountyIcon /> },

@@ -8,6 +8,7 @@ import ApplicantCertifications from "./applicant-certifications";
 import ApplicantSkills from "./applicant-skills";
 import ApplicantCustomField from "./applicant-custom-field";
 import { IApplicantDetails } from "@/types/applicants-types";
+import Button from "@/components/common/button";
 import { useState } from "react";
 import Pagination from "@/components/common/pagination";
 
@@ -42,7 +43,7 @@ const Applicant = ({ applicant }: { applicant: IApplicantDetails | null }) => {
               />
               <AboutApplicant applicant={applicant} />
               <DeveloperAccount applicant={applicant} />
-              <ApplicantCertifications applicant={applicant} />
+              {applicant.certifications && <ApplicantCertifications applicant={applicant} />}
               <ApplicantSkills applicant={applicant} />
             </div>
           </div>
@@ -57,12 +58,12 @@ const Applicant = ({ applicant }: { applicant: IApplicantDetails | null }) => {
       <div className="fixed bottom-0 left-0 right-0 flex justify-end items-center py-3 px-4 gap-8 bg-dev-card">
         <Pagination />
         <div className="flex gap-6 items-center">
-          <button className="px-3 md:px-4 py-2 border border-dev-border text-[#FF9330] rounded-lg hover:bg-dev-card-hover transition-colors flex items-center gap-2 bg-[#75421D] text-base md:text-lg font-semibold leading-8">
+          <Button variant="danger" size="md">
             Reject
-          </button>
-          <button className="px-3 md:px-4 py-2 border border-dev-border text-white rounded-lg hover:bg-dev-card-hover transition-colors flex items-center gap-2 bg-color-gradient-purple-blue text-base md:text-lg font-semibold leading-8">
+          </Button>
+          <Button variant="gradient" size="md">
             Accept
-          </button>
+          </Button>
         </div>
       </div>
     </div>

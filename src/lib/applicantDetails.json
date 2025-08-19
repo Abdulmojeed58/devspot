@@ -2,27 +2,32 @@
   "russel-french": {
     "id": "russel-french",
     "name": "Russel French",
-    "title": "Senior Developer",
-    "match": 70,
+    "title": "Senior Mobile Developer",
+    "match": 92,
     "avatarUrl": "/avatars/russel.png",
     "openToWork": true,
     "openToProjects": false,
-    "about": "Russell is a web & mobile developer who is truly full-stack. His main skill is mobile app development with React Native...",
+    "about": "Russel is a passionate mobile developer with 8+ years of experience building high-performance iOS and Android apps. He loves TypeScript, React Native, and mentoring junior devs.",
     "location": "San Francisco, United States",
-    "yearsExperience": 5,
-    "website": "https://example.dev",
+    "yearsExperience": 8,
+    "website": "https://russel.dev",
+    "skills": ["React Native", "iOS", "Android", "TypeScript"],
+    "technologies": ["React Native", "Expo", "Redux", "Jest"],
+    "certifications": ["TensorFlow Developer"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "russel" },
-      { "provider": "Twitter", "handle": "@russel" }
+      { "provider": "GitHub", "handle": "russel-french" },
+      { "provider": "LinkedIn", "handle": "russel-french" }
     ],
     "customFields": [
       {
-        "question": "Describe your experience with CSS",
+        "question": "What was your most challenging project?",
+        "description": "A cross-platform fintech app with real-time sync and offline support.",
         "answers": [
           {
             "author": "Russel",
-            "date": "2020-05-21T13:00:00Z",
-            "text": "Placera ut adipiscing nulla lectus vulputate massa..."
+            "date": "2022-11-10T09:00:00Z",
+            "text": "Building a fintech app for both iOS and Android with real-time sync and offline support was a huge challenge. I led a team of 4 and we shipped on time!",
+            "avatarUrl": "/avatars/russel.png"
           }
         ]
       }
@@ -31,27 +36,31 @@
   "ola-hopkins": {
     "id": "ola-hopkins",
     "name": "Ola Hopkins",
-    "title": "Associate Developer",
-    "match": 44,
-    "avatarUrl": "/avatars/russel.png",
-    "openToWork": true,
-    "openToProjects": false,
-    "about": "Ola is a web & mobile developer who is truly full-stack. His main skill is mobile app development with React Native...",
-    "location": "San Francisco, United States",
-    "yearsExperience": 5,
-    "website": "https://example.dev",
+    "title": "Backend Engineer",
+    "match": 81,
+    "avatarUrl": "/avatars/ola.png",
+    "openToWork": false,
+    "openToProjects": true,
+    "about": "Ola is a backend specialist with a love for Go and distributed systems. He has built scalable APIs for startups and enjoys Docker and Kubernetes.",
+    "location": "Berlin, Germany",
+    "yearsExperience": 6,
+    "website": "https://olahopkins.dev",
+    "skills": ["Node.js", "Go", "PostgreSQL", "Docker"],
+    "technologies": ["Go", "Node.js", "Redis", "Kubernetes"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "russel" },
-      { "provider": "Twitter", "handle": "@russel" }
+      { "provider": "GitHub", "handle": "olahopkins" },
+      { "provider": "Twitter", "handle": "@olahopkins" }
     ],
     "customFields": [
       {
-        "question": "Describe your experience with CSS",
+        "question": "How do you ensure API reliability?",
+        "description": "Automated tests, monitoring, and graceful error handling.",
         "answers": [
           {
-            "author": "Russel",
-            "date": "2020-05-21T13:00:00Z",
-            "text": "Placera ut adipiscing nulla lectus vulputate massa..."
+            "author": "Ola",
+            "date": "2023-01-15T15:30:00Z",
+            "text": "I use integration tests, Prometheus monitoring, and always return clear error messages for clients.",
+            "avatarUrl": "/avatars/ola.png"
           }
         ]
       }
@@ -60,27 +69,256 @@
   "randall-swanson": {
     "id": "randall-swanson",
     "name": "Randall Swanson",
-    "title": "Senior Designer",
-    "match": 96,
-    "avatarUrl": "/avatars/russel.png",
+    "title": "UI/UX Designer",
+    "match": 77,
+    "avatarUrl": "/avatars/randall.png",
     "openToWork": true,
-    "openToProjects": false,
-    "about": "Randall is a web & mobile developer who is truly full-stack. His main skill is mobile app development with React Native...",
-    "location": "San Francisco, United States",
+    "openToProjects": true,
+    "about": "Randall is a creative UI/UX designer with a knack for branding and micro-interactions. He has worked with agencies and loves Figma and prototyping.",
+    "location": "Stockholm, Sweden",
     "yearsExperience": 5,
-    "website": "https://example.dev",
+    "website": "https://randalldesigns.com",
+    "skills": ["Figma", "Sketch", "Adobe XD", "Branding"],
+    "technologies": ["Figma", "Sketch", "Principle"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "russel" },
-      { "provider": "Twitter", "handle": "@russel" }
+      { "provider": "Dribbble", "handle": "randallux" }
     ],
     "customFields": [
       {
-        "question": "Describe your experience with CSS",
+        "question": "Favorite design tool?",
+        "description": "Figma for collaboration, Principle for animation.",
         "answers": [
           {
-            "author": "Russel",
-            "date": "2020-05-21T13:00:00Z",
-            "text": "Placera ut adipiscing nulla lectus vulputate massa..."
+            "author": "Randall",
+            "date": "2022-08-22T10:00:00Z",
+            "text": "Figma is my go-to for UI, but I use Principle for prototyping animations.",
+            "avatarUrl": "/avatars/randall.png"
+          }
+        ]
+      }
+    ]
+  },
+  "olive-james": {
+    "id": "olive-james",
+    "name": "Olive James",
+    "title": "Fullstack Developer",
+    "match": 68,
+    "avatarUrl": "/avatars/olive.png",
+    "openToWork": false,
+    "openToProjects": true,
+    "about": "Olive is a fullstack developer who loves React and Django. She enjoys building GraphQL APIs and teaching coding to kids.",
+    "location": "Cape Town, South Africa",
+    "yearsExperience": 4,
+    "website": "https://olive.codes",
+    "skills": ["React", "Python", "Django", "GraphQL"],
+    "technologies": ["React", "Django", "GraphQL", "TypeScript"],
+    "certifications": ["TensorFlow Developer"],
+    "developerAccounts": [
+      { "provider": "GitHub", "handle": "olivejames" }
+    ],
+    "customFields": [
+      {
+        "question": "How do you keep learning?",
+        "description": "Online courses, open source, and teaching others.",
+        "answers": [
+          {
+            "author": "Olive",
+            "date": "2023-03-10T12:00:00Z",
+            "text": "I take online courses, contribute to open source, and run a local kids code club.",
+            "avatarUrl": "/avatars/olive.png"
+          }
+        ]
+      }
+    ]
+  },
+  "elmer-robinson": {
+    "id": "elmer-robinson",
+    "name": "Elmer Robinson",
+    "title": "DevOps Engineer",
+    "match": 85,
+    "avatarUrl": "/avatars/elmer.png",
+    "openToWork": true,
+    "openToProjects": false,
+    "about": "Elmer is a DevOps engineer who automates everything. He loves AWS, Terraform, and building CI/CD pipelines for fast, safe deployments.",
+    "location": "Toronto, Canada",
+    "yearsExperience": 7,
+    "website": "https://elmerops.com",
+    "skills": ["AWS", "Terraform", "Kubernetes", "CI/CD"],
+    "technologies": ["AWS", "Terraform", "Jenkins", "Docker"],
+    "developerAccounts": [
+      { "provider": "GitHub", "handle": "elmerrobinson" }
+    ],
+    "customFields": [
+      {
+        "question": "Most useful DevOps tool?",
+        "description": "Terraform for infrastructure as code.",
+        "answers": [
+          {
+            "author": "Elmer",
+            "date": "2022-12-01T14:00:00Z",
+            "text": "Terraform lets me manage cloud infra as code and keep everything versioned.",
+            "avatarUrl": "/avatars/elmer.png"
+          }
+        ]
+      }
+    ]
+  },
+  "henry-edwards": {
+    "id": "henry-edwards",
+    "name": "Henry Edwards",
+    "title": "Frontend Engineer",
+    "match": 74,
+    "avatarUrl": "/avatars/henry.png",
+    "openToWork": false,
+    "openToProjects": true,
+    "about": "Henry is a frontend engineer who loves Vue.js and beautiful UIs. He is a Storybook advocate and enjoys writing tests with Jest.",
+    "location": "London, United Kingdom",
+    "yearsExperience": 5,
+    "website": "https://henryedwards.dev",
+    "skills": ["Vue.js", "Sass", "Jest", "Storybook"],
+    "technologies": ["Vue.js", "Jest", "Storybook", "Sass"],
+    "certifications": ["TensorFlow Developer"],
+    "developerAccounts": [
+      { "provider": "GitHub", "handle": "henryedwards" }
+    ],
+    "customFields": [
+      {
+        "question": "Favorite CSS preprocessor?",
+        "description": "Sass for nesting and variables.",
+        "answers": [
+          {
+            "author": "Henry",
+            "date": "2023-02-20T11:00:00Z",
+            "text": "Sass makes my CSS so much more maintainable and readable.",
+            "avatarUrl": "/avatars/henry.png"
+          }
+        ]
+      }
+    ]
+  },
+  "kate-brock": {
+    "id": "kate-brock",
+    "name": "Kate Brock",
+    "title": "Product Manager",
+    "match": 63,
+    "avatarUrl": "/avatars/kate.png",
+    "openToWork": true,
+    "openToProjects": false,
+    "about": "Kate is a product manager who loves agile teams and user research. She has launched 10+ products and is a certified Scrum Master.",
+    "location": "Sydney, Australia",
+    "yearsExperience": 9,
+    "website": "https://katepm.com",
+    "skills": ["Agile", "Scrum", "Roadmapping", "User Research"],
+    "technologies": ["Jira", "Confluence", "Miro"],
+    "developerAccounts": [
+      { "provider": "LinkedIn", "handle": "katebrock" }
+    ],
+    "customFields": [
+      {
+        "question": "How do you prioritize features?",
+        "description": "User feedback, business value, and dev effort.",
+        "answers": [
+          {
+            "author": "Kate",
+            "date": "2023-04-05T10:00:00Z",
+            "text": "I use a weighted scoring model and always talk to users before finalizing the roadmap.",
+            "avatarUrl": "/avatars/kate.png"
+          }
+        ]
+      }
+    ]
+  },
+  "nancy-duncan": {
+    "id": "nancy-duncan",
+    "name": "Nancy Duncan",
+    "title": "QA Engineer",
+    "match": 70,
+    "avatarUrl": "/avatars/nancy.png",
+    "openToWork": false,
+    "openToProjects": true,
+    "about": "Nancy is a QA engineer who automates everything. She loves Cypress, API testing, and finding edge cases others miss.",
+    "location": "Austin, United States",
+    "yearsExperience": 6,
+    "website": "https://nancyqa.com",
+    "skills": ["Cypress", "Selenium", "Manual Testing", "API Testing"],
+    "technologies": ["Cypress", "Selenium", "Postman"],
+    "developerAccounts": [
+      { "provider": "GitHub", "handle": "nancyduncan" }
+    ],
+    "customFields": [
+      {
+        "question": "How do you write good test cases?",
+        "description": "Think like a user, cover edge cases, automate when possible.",
+        "answers": [
+          {
+            "author": "Nancy",
+            "date": "2023-05-12T16:00:00Z",
+            "text": "I always start with user stories, then write tests for every edge case I can imagine.",
+            "avatarUrl": "/avatars/nancy.png"
+          }
+        ]
+      }
+    ]
+  },
+  "rosetta-alvarez": {
+    "id": "rosetta-alvarez",
+    "name": "Rosetta Alvarez",
+    "title": "Data Scientist",
+    "match": 88,
+    "avatarUrl": "/avatars/rosetta.png",
+    "openToWork": true,
+    "openToProjects": false,
+    "about": "Rosetta is a data scientist who loves machine learning and R. She has published papers on NLP and enjoys Kaggle competitions.",
+    "location": "Madrid, Spain",
+    "yearsExperience": 7,
+    "website": "https://rosetta.ai",
+    "skills": ["Python", "Pandas", "Machine Learning", "R"],
+    "technologies": ["Python", "scikit-learn", "TensorFlow", "R"],
+    "developerAccounts": [
+      { "provider": "Kaggle", "handle": "rosettaalvarez" }
+    ],
+    "customFields": [
+      {
+        "question": "Favorite ML project?",
+        "description": "A chatbot for Spanish banking customers.",
+        "answers": [
+          {
+            "author": "Rosetta",
+            "date": "2022-09-18T13:00:00Z",
+            "text": "I built a Spanish-language chatbot for a bank using TensorFlow and spaCy.",
+            "avatarUrl": "/avatars/rosetta.png"
+          }
+        ]
+      }
+    ]
+  },
+  "zachary-murray": {
+    "id": "zachary-murray",
+    "name": "Zachary Murray",
+    "title": "Cloud Architect",
+    "match": 79,
+    "avatarUrl": "/avatars/zachary.png",
+    "openToWork": false,
+    "openToProjects": true,
+    "about": "Zachary is a cloud architect with a focus on Azure and GCP. He designs secure, scalable cloud systems for global companies.",
+    "location": "Singapore",
+    "yearsExperience": 10,
+    "website": "https://zachary.cloud",
+    "skills": ["Azure", "GCP", "Cloud Security", "Networking"],
+    "technologies": ["Azure", "GCP", "Terraform", "Ansible"],
+    "developerAccounts": [
+      { "provider": "GitHub", "handle": "zacharymurray" }
+    ],
+    "customFields": [
+      {
+        "question": "Most complex cloud migration?",
+        "description": "Moving a legacy ERP to GCP with zero downtime.",
+        "answers": [
+          {
+            "author": "Zachary",
+            "date": "2023-06-01T09:00:00Z",
+            "text": "Migrated a 20-year-old ERP system to GCP with zero downtime and full data integrity.",
+            "avatarUrl": "/avatars/zachary.png"
           }
         ]
       }

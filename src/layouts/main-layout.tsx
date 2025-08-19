@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 import MainSidebar from "./main-sidebar";
 import { ArrowDownIcon, BellIcon, PlusIcon, SearchIcon } from "@/components/icons";
-import { Logo } from "@/components/common";
+import { Logo, Button } from "@/components/common";
 import Footer from "./footer";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import ApplicantSidebar from "./applicant-sidebar";
@@ -68,15 +68,15 @@ export default function MainLayout({ children }: LayoutProps) {
 
           {isApplicantsPage ? (
             <div className="hidden sm:flex space-x-2 md:space-x-4 ml-auto h-full font-roboto">
-              <button className="px-3 md:px-4 py-2 bg-dev-primary text-white rounded-lg hover:bg-blue-600 transition-colors text-base md:text-lg font-semibold leading-8">
+              <Button variant="primary" size="md">
                 Log in
-              </button>
-              <button className="px-3 md:px-4 py-2 border border-dev-border text-white rounded-lg hover:bg-dev-card-hover transition-colors flex items-center gap-2 bg-color-gradient-purple-blue">
-                <PlusIcon />{" "}
+              </Button>
+              <Button variant="gradient" size="md">
+                <PlusIcon />
                 <span className="text-base md:text-lg font-semibold leading-8">
                   Host a hackathon
                 </span>
-              </button>
+              </Button>
             </div>
           ) : (
             // {/* Right Actions */}

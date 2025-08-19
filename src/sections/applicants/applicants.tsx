@@ -1,7 +1,7 @@
 "use client";
 
 import { IApplicant } from "@/types/applicants-types";
-import { ApplicantCard } from "@/components/common";
+import { ApplicantCard, Skeleton } from "@/components/common";
 import { useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 
@@ -27,16 +27,20 @@ export default function Applicants() {
         <h1 className="text-[24px] md:text-[32px] lg:text-[40px] font-bold text-white font-raleway">Applicants</h1>
       </div>
 
-      {isLoading && <div className="text-white">Loading...</div>}
       {isError && <div className="text-red-500">Failed to load applicants.</div>}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] gap-y-[56px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] gap-y-[30px] lg:gap-x-[40px] lg:gap-y-[56px]">
+        {isLoading &&
+          Array.from({ length: 6 }).map((_, i) => (
+            <Skeleton key={i} className="h-[260px] w-full rounded-lg" />
+          ))}
         {(applicants ?? []).length === 0 && !isLoading && !isError && (
           <div className="col-span-full text-white">No applicants found.</div>
         )}
-        {(applicants ?? []).map((applicant: IApplicant) => (
-          <ApplicantCard key={applicant.id} applicant={applicant} />
-        ))}
+        {!isLoading &&
+          (applicants ?? []).map((applicant: IApplicant) => (
+            <ApplicantCard key={applicant.id} applicant={applicant} />
+          ))}
       </div>
     </div>
   );

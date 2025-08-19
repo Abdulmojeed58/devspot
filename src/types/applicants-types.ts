@@ -23,13 +23,24 @@ interface IApplicantDetails {
   location: string;
   yearsExperience: number;
   website: string;
-  developerAccounts: { provider: string; handle: string }[];
+  developerAccounts: {
+    provider: string;
+    handle: string;
+    details?: { label: string; value: string }[];
+  }[];
   skills: string[];
+  technologies: string[];
+  certifications?: string[];
   customFields: {
     question: string;
-    answers: { author: string; date: string; text: string }[];
+    description: string;
+    answers: {
+      author: string;
+      date: string;
+      text: string;
+      avatarUrl: string;
+    }[];
   }[];
 }
 
 export type { IApplicant, IApplicantDetails };
-

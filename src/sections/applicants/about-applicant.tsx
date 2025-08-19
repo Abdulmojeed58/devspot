@@ -23,7 +23,7 @@ const AboutApplicant = ({ applicant }: { applicant: IApplicantDetails }) => {
             <div className="p-1">
               <CalendarIcon />
             </div>
-            <span className="text-dev-text-muted">{applicant.experience}</span>
+            <span className="text-dev-text-muted">{applicant.yearsExperience} years experience</span>
           </div>
           <div className="flex items-center gap-4 py-[20px] text-sm border-t-[2px] border-dev-border">
             <div className="p-1">
