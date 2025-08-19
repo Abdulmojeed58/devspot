@@ -1,37 +1,41 @@
 import Link from "next/link"
 import type { IApplicant } from "@/types/applicants-types"
 import Image from "next/image"
-// import Progress from "../ui/progress"
-import { StarIcon } from "../icons"
 import Chip from "./chip"
 import Progress from "./progress"
+import { StarIcon } from "../icons"
 
 const ApplicantCard = ({ applicant }: { applicant: IApplicant }) => {
   return (
     <Link key={applicant.id} href={`/applicants/${applicant.id}`} className="block group">
       <div className="bg-dev-card rounded-lg py-4 px-3 sm:py-6 sm:px-5 md:px-[20px] hover:bg-dev-card-hover transition-colors">
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 mb-4 sm:mb-6">
-          <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
-            <Image
-              src={applicant.avatarUrl || "/placeholder.svg"}
-              alt={applicant.name}
-              className="rounded-full object-cover border border-white w-16 h-16 sm:w-[72px] sm:h-[72px] flex-shrink-0"
-              width={72}
-              height={72}
-            />
-            <div className="min-w-0 flex-1">
-              <h3 className="font-bold text-lg sm:text-xl md:text-2xl text-white truncate">{applicant.name}</h3>
-              <p className="text-sm sm:text-base font-semibold leading-6 sm:leading-7 text-dev-text-muted mt-1.5 truncate">
+        <div className="flex items-start gap-4 mb-4 sm:mb-6">
+          <Image
+            src={applicant.avatarUrl || "/placeholder.svg"}
+            alt={applicant.name}
+            className="rounded-full object-cover border border-white w-16 h-16 sm:w-[72px] sm:h-[72px] flex-shrink-0"
+            width={72}
+            height={72}
+          />
+          <div className="min-w-0 flex-1 space-y-3">
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="font-bold text-lg sm:text-xl md:text-2xl text-white truncate min-w-0 flex-1">
+                {applicant.name}
+              </h3>
+              <div className="flex-shrink-0">
+                <Chip status={applicant.decision} />
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <p className="text-sm sm:text-base font-semibold leading-6 sm:leading-7 text-dev-text-muted truncate">
                 {applicant.title}
               </p>
               <p className="text-[10px] sm:text-xs font-medium leading-3 text-[#89898C] font-roboto truncate">
                 {applicant.location}
               </p>
             </div>
-          </div>
-          <div className="flex-shrink-0">
-            <Chip status={applicant.decision} />
           </div>
         </div>
 
