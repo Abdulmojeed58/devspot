@@ -22,6 +22,7 @@ export default function MainLayout({ children, applicant }: LayoutProps) {
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Update local state if URL changes (e.g., back/forward navigation)
   useEffect(() => {
@@ -49,6 +50,27 @@ export default function MainLayout({ children, applicant }: LayoutProps) {
       {/* Header */}
       <header className="sticky top-0 left-0 right-0 z-30 h-[64px] md:h-[76px] border-b border-dev-border bg-dev-card flex-shrink-0">
         <div className="flex items-center px-4 py-2 md:py-[10px] h-[64px] md:h-[76px]">
+          {/* Hamburger or Close for mobile */}
+          <button
+            className="md:hidden mr-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-dev-primary"
+            aria-label={sidebarOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          >
+            {sidebarOpen ? (
+              // X icon
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <line x1="6" y1="6" x2="18" y2="18" stroke="#E7E7E8" strokeWidth="2" strokeLinecap="round" />
+                <line x1="18" y1="6" x2="6" y2="18" stroke="#E7E7E8" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            ) : (
+              // Hamburger icon
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <rect y="5" width="24" height="2" rx="1" fill="#E7E7E8" />
+                <rect y="11" width="24" height="2" rx="1" fill="#E7E7E8" />
+                <rect y="17" width="24" height="2" rx="1" fill="#E7E7E8" />
+              </svg>
+            )}
+          </button>
           {/* Logo */}
           <div className="flex items-center space-x-2 mr-4 md:mr-32">
             <Logo />
@@ -112,15 +134,29 @@ export default function MainLayout({ children, applicant }: LayoutProps) {
 
       {/* Sidebar + Main Content */}
       <div className="flex h-[calc(100vh-5rem)] overflow-hidden">
-        {/* Sidebar */}
+        {/* Sidebar for desktop */}
         <div className="top-20 left-0 z-20 h-[calc(100vh-5rem)] w-[220px] hidden md:block">
           {isApplicantsPage ? <MainSidebar /> : <ApplicantSidebar />}
+        </div>
+        {/* Sidebar for mobile */}
+        <div
+          className={`fixed left-0 right-0 top-[64px] md:top-[76px] z-40 bg-black bg-opacity-40 transition-opacity duration-200 md:hidden ${sidebarOpen ? 'block' : 'hidden'}`}
+          style={{ height: 'calc(100vh - 64px)' }}
+          onClick={() => setSidebarOpen(false)}
+          aria-hidden={!sidebarOpen}
+        >
+          <div
+            className={`absolute top-0 left-0 h-full w-[220px] bg-dev-card shadow-lg transition-transform duration-200 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Removed close button from inside sidebar */}
+            {isApplicantsPage ? <MainSidebar /> : <ApplicantSidebar />}
+          </div>
         </div>
         {/* Main Content */}
         <main className="flex-1 h-[calc(100vh-5rem)] bg-dev-bg relative">
           <div className="overflow-y-auto h-full">
             {children}
-
             {/* Footer */}
             <Footer />
           </div>

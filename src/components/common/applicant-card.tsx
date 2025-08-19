@@ -25,8 +25,8 @@ const ApplicantCard = ({ applicant }: { applicant: IApplicant }) => {
             />
             <div className="text-center sm:text-left">
               <h3 className="font-bold text-lg sm:text-xl md:text-2xl text-white">{applicant.name}</h3>
-              <p className="text-sm sm:text-base font-semibold leading-6 sm:leading-7 text-dev-text-muted mt-1.5">{applicant.title}</p>
-              <p className="text-[10px] sm:text-xs font-medium leading-3 text-[#89898C] font-roboto">{applicant.location}</p>
+              <p className="text-sm sm:text-base font-semibold leading-6 sm:leading-7 text-dev-text-muted mt-1.5 truncate overflow-hidden whitespace-nowrap max-w-[180px] sm:max-w-[220px] lg:max-w-[100px] xl:max-w-[150px]">{applicant.title}</p>
+              <p className="text-[10px] sm:text-xs font-medium leading-3 text-[#89898C] font-roboto truncate overflow-hidden whitespace-nowrap max-w-[100px] sm:max-w-[140px] lg:max-w-[100px] xl:max-w-[150px]">{applicant.location}</p>
             </div>
           </div>
           <Chip status={applicant.decision} />
@@ -38,7 +38,7 @@ const ApplicantCard = ({ applicant }: { applicant: IApplicant }) => {
             <StarIcon />
             <p className="text-xs sm:text-sm md:text-base font-medium leading-5 sm:leading-6 text-[#ADAFFA] font-roboto">{applicant.likes}</p>
           </div>
-          {applicant.skills.map((skill, index) => (
+          {applicant.skills.slice(0, 2).map((skill, index) => (
             <span
               key={index}
               className="px-2 sm:px-3 py-1 bg-[#2B2B31] rounded-full text-xs sm:text-sm font-medium leading-5 sm:leading-6 font-roboto text-[#E7E7E8]"
@@ -46,6 +46,13 @@ const ApplicantCard = ({ applicant }: { applicant: IApplicant }) => {
               {skill}
             </span>
           ))}
+          {applicant.skills.length > 2 && (
+            <span
+              className="px-2 sm:px-3 py-1 bg-[#2B2B31] rounded-full text-xs sm:text-sm font-medium leading-5 sm:leading-6 font-roboto text-[#E7E7E8]"
+            >
+              +{applicant.skills.length - 2} more
+            </span>
+          )}
         </div>
 
         {/* Match Percentage */}
