@@ -29,7 +29,7 @@ export default function Applicants() {
 
       {isError && <div className="text-red-500">Failed to load applicants.</div>}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] gap-y-[30px] lg:gap-x-[33px] lg:gap-y-[33px] xl:gap-x-[35px] xl:gap-y-[56px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-[20px] gap-y-[30px] lg:gap-x-[33px] lg:gap-y-[33px] xl:gap-x-[35px] xl:gap-y-[35px]">
         {isLoading &&
           Array.from({ length: 6 }).map((_, i) => (
             <Skeleton key={i} className="h-[260px] w-full rounded-lg" />

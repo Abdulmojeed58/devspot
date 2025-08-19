@@ -72,7 +72,7 @@ export default function MainLayout({ children, applicant }: LayoutProps) {
             )}
           </button>
           {/* Logo */}
-          <div className="flex items-center space-x-2 mr-4 md:mr-32">
+          <div className={`flex items-center space-x-2 mr-4 ${isApplicantsPage ? 'md:mr-[153px]' : 'md:mr-24'}`}>
             <Logo />
           </div>
 
@@ -85,7 +85,7 @@ export default function MainLayout({ children, applicant }: LayoutProps) {
                 value={search}
                 onChange={onSearchChange}
                 placeholder="Search for hackathons, companies, developers, events and discussions"
-                className="w-full bg-[#2B2B31] border border-[#424248] rounded-[12px] pl-10 pr-4 py-2 text-dev-text placeholder-dev-text-muted focus:outline-none focus:ring-2 focus:ring-dev-primary text-sm font-medium leading-6 h-full"
+                className="w-full bg-[#2B2B31] border border-[#424248] rounded-[12px] pl-10 pr-4 py-2 text-dev-text placeholder-dev-text-muted focus:outline-none focus:ring-1 focus:ring-dev-primary text-sm font-medium leading-6 h-full"
               />
             </div>
           </div>
@@ -158,7 +158,7 @@ export default function MainLayout({ children, applicant }: LayoutProps) {
           <div className="overflow-y-auto h-full">
             {children}
             {/* Footer */}
-            <Footer />
+            <Footer isApplicantsPage={isApplicantsPage} />
           </div>
         </main>
       </div>

@@ -39,7 +39,7 @@ const ApplicantBanner = ({ applicant, openToWork, openToProjects }: { applicant:
           </div>
 
           <div className="flex flex-col items-center lg:items-end text-center lg:text-right mt-4 lg:mt-0 w-full lg:w-auto lg:h-full">
-            <div className="text-white flex flex-col lg:items-end lg:justify-between lg:gap-14">
+            <div className="text-white flex flex-col lg:items-end lg:justify-between lg:gap-20">
               <div className="text-lg sm:text-2xl md:text-[32px] font-bold leading-normal font-raleway">
                 Applicant #{applicant.applicantId}
               </div>
