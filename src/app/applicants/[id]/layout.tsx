@@ -3,6 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 import MainLayout from "@/layouts/main-layout";
 import { IApplicantDetails } from "@/types/applicants-types";
+import { Loading } from "@/components/common";
 
 export default async function Layout({
   children,
@@ -20,7 +21,7 @@ export default async function Layout({
 
   // Pass applicant as prop to MainLayout
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <MainLayout applicant={applicant}>{children}</MainLayout>
     </Suspense>
   );

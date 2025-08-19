@@ -5,3 +5,4 @@ export { default as Progress } from "./progress";
 export { default as Button } from "./button";
 export { default as Skeleton } from "./skeleton";
 export { default as Chip } from "./chip";
+export { default as Loading } from "./loading";
