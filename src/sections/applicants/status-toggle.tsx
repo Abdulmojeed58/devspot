@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { CheckIcon, CrossIcon } from "@/components/icons";
 import { Card } from "@/components/common";
-import { IApplicantDetails } from "@/types/applicants-types";
 
 interface ToggleItemProps {
   label: string;

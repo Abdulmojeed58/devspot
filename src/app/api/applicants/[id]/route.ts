@@ -1,32 +1,30 @@
-import { NextRequest } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
-import { IApplicantDetails } from '@/types/applicants-types';
+import type { NextRequest } from "next/server"
+import { promises as fs } from "fs"
+import path from "path"
+import type { IApplicantDetails } from "@/types/applicants-types"
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic"
 
-export async function GET(
-  req: NextRequest,
-  context: { params: { id: string } }
-) {
-  const { id } = context.params;
-  const filePath = path.join(process.cwd(), 'src/lib/applicantDetails.json');
-  const file = await fs.readFile(filePath, 'utf-8');
-  const details: Record<string, IApplicantDetails> = JSON.parse(file);
-  const applicant = details[id];
+export async function GET(req: NextRequest, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params
+  const filePath = path.join(process.cwd(), "src/lib/applicantDetails.json")
+  const file = await fs.readFile(filePath, "utf-8")
+  const details: Record<string, IApplicantDetails> = JSON.parse(file)
+  const applicant = details[id]
 
   if (!applicant) {
-    return new Response(JSON.stringify({ error: 'Applicant not found' }), {
+    return new Response(JSON.stringify({ error: "Applicant not found" }), {
       status: 404,
-      headers: { 'Content-Type': 'application/json' },
-    });
+      headers: { "Content-Type": "application/json" },
+    })
   }
 
   return new Response(JSON.stringify(applicant), {
     status: 200,
     headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=60',
+      "Content-Type": "application/json",
+      "Cache-Control": "public, max-age=60",
     },
-  });
+  })
 }
+

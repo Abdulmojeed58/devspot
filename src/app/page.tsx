@@ -1,7 +1,9 @@
 import MainLayout from "@/layouts/main-layout";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
+    <Suspense fallback={<div>Loading...</div>}> 
     <MainLayout>
       <div className="p-6 space-y-4">
         <h1 className="text-dev-text text-2xl font-bold">DevSpot - Main Page</h1>
@@ -25,8 +27,9 @@ export default function Home() {
         
         {/* Test animations */}
         <div className="animate-pulse bg-dev-primary h-4 rounded"></div>
-        <div className="animate-bounce bg-dev-success h-4 w-4 rounded-full"></div>
-      </div>
-    </MainLayout>
+          <div className="animate-bounce bg-dev-success h-4 w-4 rounded-full"></div>
+        </div>
+      </MainLayout>
+    </Suspense>
   );
 }
