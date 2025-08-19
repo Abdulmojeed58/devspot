@@ -16,8 +16,63 @@
     "technologies": ["React Native", "Expo", "Redux", "Jest"],
     "certifications": ["TensorFlow Developer"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "russel-french" },
-      { "provider": "LinkedIn", "handle": "russel-french" }
+      { "provider": "LinkedIn", "handle": "russel-french" },
+      {
+        "provider": "GitHub",
+        "handle": "russel-french",
+        "details": [
+          {
+            "label": "Public Repo",
+            "value": "27"
+          },
+          {
+            "label": "Followers",
+            "value": "65"
+          },
+          {
+            "label": "Following",
+            "value": "10"
+          }
+        ]
+      },
+      {
+        "provider": "Stack Overflow",
+        "handle": "russel-french",
+        "details": [
+          {
+            "label": "Badges",
+            "value": "17"
+          },
+          {
+            "label": "Upvotes",
+            "value": "10"
+          },
+          {
+            "label": "Questions",
+            "value": "5"
+          },
+          {
+            "label": "Answers",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "provider": "Hacker Earth",
+        "handle": "russel-french",
+        "detail": {
+          "label": "Points",
+          "value": "545"
+        }
+      },
+      {
+        "provider": "Dev.to",
+        "handle": "russel-french",
+        "detail": {
+          "label": "Articles",
+          "value": "17"
+        }
+      }
     ],
     "customFields": [
       {
@@ -68,8 +123,34 @@
     "skills": ["Node.js", "Go", "PostgreSQL", "Docker"],
     "technologies": ["Go", "Node.js", "Redis", "Kubernetes"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "olahopkins" },
-      { "provider": "Twitter", "handle": "@olahopkins" }
+      {
+        "provider": "GitHub",
+        "handle": "olahopkins",
+        "details": [
+          {
+            "label": "Public Repo",
+            "value": "7"
+          },
+          {
+            "label": "Followers",
+            "value": "25"
+          },
+          {
+            "label": "Following",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "provider": "Stack Overflow",
+        "handle": "@olahopkins",
+        "details": [
+          { "label": "Badges", "value": "16" },
+          { "label": "Upvotes", "value": "25" },
+          { "label": "Questions", "value": "20" },
+          { "label": "Answers", "value": "17" }
+        ]
+      }
     ],
     "customFields": [
       {
@@ -114,7 +195,24 @@
     "skills": ["Figma", "Sketch", "Adobe XD", "Branding"],
     "technologies": ["Figma", "Sketch", "Principle"],
     "developerAccounts": [
-      { "provider": "Dribbble", "handle": "randallux" }
+      {
+        "provider": "GitHub",
+        "handle": "randallux",
+        "details": [
+          {
+            "label": "Public Repo",
+            "value": "7"
+          },
+          {
+            "label": "Followers",
+            "value": "5"
+          },
+          {
+            "label": "Following",
+            "value": "18"
+          }
+        ]
+      }
     ],
     "customFields": [
       {
@@ -147,9 +245,7 @@
     "skills": ["React", "Python", "Django", "GraphQL"],
     "technologies": ["React", "Django", "GraphQL", "TypeScript"],
     "certifications": ["TensorFlow Developer"],
-    "developerAccounts": [
-      { "provider": "GitHub", "handle": "olivejames" }
-    ],
+    "developerAccounts": [{ "provider": "GitHub", "handle": "olivejames" }],
     "customFields": [
       {
         "question": "How do you keep learning?",
@@ -181,7 +277,48 @@
     "skills": ["AWS", "Terraform", "Kubernetes", "CI/CD"],
     "technologies": ["AWS", "Terraform", "Jenkins", "Docker"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "elmerrobinson" }
+      {
+        "provider": "GitHub",
+        "handle": "elmerrobinson",
+        "details": [
+          {
+            "label": "Public Repo",
+            "value": "19"
+          },
+          {
+            "label": "Followers",
+            "value": "5"
+          },
+          {
+            "label": "Following",
+            "value": "4"
+          }
+        ]
+      },
+      {
+        "provider": "HackerRank",
+        "handle": "elmerrobinson",
+        "detail": {
+          "label": "Rank",
+          "value": "100"
+        }
+      },
+      {
+        "provider": "Dev.to",
+        "handle": "elmerrobinson",
+        "detail": {
+          "label": "Articles",
+          "value": "5"
+        }
+      },
+      {
+        "provider": "Hacker Earth",
+        "handle": "elmerrobinson",
+        "detail": {
+          "label": "Points",
+          "value": "26"
+        }
+      }
     ],
     "customFields": [
       {
@@ -215,7 +352,52 @@
     "technologies": ["Vue.js", "Jest", "Storybook", "Sass"],
     "certifications": ["TensorFlow Developer"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "henryedwards" }
+      {
+        "provider": "GitHub",
+        "handle": "henryedwards",
+        "details": [
+          {
+            "label": "Public Repo",
+            "value": "10"
+          },
+          {
+            "label": "Followers",
+            "value": "10"
+          },
+          {
+            "label": "Following",
+            "value": "10"
+          }
+        ]
+      },
+      {
+        "provider": "LinkedIn",
+        "handle": "henryedwards"
+      },
+      {
+        "provider": "HackerRank",
+        "handle": "henryedwards",
+        "detail": {
+          "label": "Rank",
+          "value": "40"
+        }
+      },
+      {
+        "provider": "Hacker Earth",
+        "handle": "henryedwards",
+        "detail": {
+          "label": "Points",
+          "value": "9"
+        }
+      },
+      {
+        "provider": "Dev.to",
+        "handle": "henryedwards",
+        "detail": {
+          "label": "Articles",
+          "value": "1k"
+        }
+      }
     ],
     "customFields": [
       {
@@ -248,7 +430,28 @@
     "skills": ["Agile", "Scrum", "Roadmapping", "User Research"],
     "technologies": ["Jira", "Confluence", "Miro"],
     "developerAccounts": [
-      { "provider": "LinkedIn", "handle": "katebrock" }
+      {
+        "provider": "GitHub",
+        "handle": "katebrock",
+        "details": [
+          {
+            "label": "Public Repo",
+            "value": "10"
+          },
+          {
+            "label": "Followers",
+            "value": "100"
+          },
+          {
+            "label": "Following",
+            "value": "100"
+          }
+        ]
+      },
+      {
+        "provider": "LinkedIn",
+        "handle": "katebrock"
+      }
     ],
     "customFields": [
       {
@@ -281,7 +484,48 @@
     "skills": ["Cypress", "Selenium", "Manual Testing", "API Testing"],
     "technologies": ["Cypress", "Selenium", "Postman"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "nancyduncan" }
+      {
+        "provider": "GitHub",
+        "handle": "nancyduncan",
+        "details": [
+          {
+            "label": "Public Repo",
+            "value": "100"
+          },
+          {
+            "label": "Followers",
+            "value": "100"
+          },
+          {
+            "label": "Following",
+            "value": "100"
+          }
+        ]
+      },
+      {
+        "provider": "HackerRank",
+        "handle": "nancyduncan",
+        "detail": {
+          "label": "Rank",
+          "value": "57"
+        }
+      },
+      {
+        "provider": "Hacker Earth",
+        "handle": "nancyduncan",
+        "detail": {
+          "label": "Points",
+          "value": "29"
+        }
+      },
+      {
+        "provider": "Dev.to",
+        "handle": "nancyduncan",
+        "detail": {
+          "label": "Articles",
+          "value": "2"
+        }
+      }
     ],
     "customFields": [
       {
@@ -314,7 +558,36 @@
     "skills": ["Python", "Pandas", "Machine Learning", "R"],
     "technologies": ["Python", "scikit-learn", "TensorFlow", "R"],
     "developerAccounts": [
-      { "provider": "Kaggle", "handle": "rosettaalvarez" }
+      {
+        "provider": "LinkedIn",
+        "handle": "rosettaalvarez"
+      },
+      {
+        "provider": "GitHub",
+        "handle": "rosettaalvarez",
+        "details": [
+          {
+            "label": "Public Repo",
+            "value": "102"
+          },
+          {
+            "label": "Followers",
+            "value": "103"
+          },
+          {
+            "label": "Following",
+            "value": "97"
+          }
+        ]
+      },
+      {
+        "provider": "HackerRank",
+        "handle": "rosettaalvarez",
+        "detail": {
+          "label": "Rank",
+          "value": "100"
+        }
+      }
     ],
     "customFields": [
       {
@@ -347,7 +620,10 @@
     "skills": ["Azure", "GCP", "Cloud Security", "Networking"],
     "technologies": ["Azure", "GCP", "Terraform", "Ansible"],
     "developerAccounts": [
-      { "provider": "GitHub", "handle": "zacharymurray" }
+      {
+        "provider": "LinkedIn",
+        "handle": "zacharymurray"
+      }
     ],
     "customFields": [
       {

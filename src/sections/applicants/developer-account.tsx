@@ -16,6 +16,9 @@ const DeveloperAccount = ({ applicant }: { applicant: IApplicantDetails }) => {
       case "GitHub": return <GithubIcon />;
       case "LinkedIn": return <LinkedinIcon />;
       case "Stack Overflow": return <StackoverflowIcon />;
+      case "HackerRank": return <CompanyIcon />;
+      case "Hacker Earth": return <Image src="/icons/hacker.svg" alt="HackerRank" width={24} height={24} />;
+      case "Dev.to": return <DevIcon />;
     }
   }
   return (
@@ -29,28 +32,13 @@ const DeveloperAccount = ({ applicant }: { applicant: IApplicantDetails }) => {
             <>
             {
               account.details ? (
-                <DeveloperAccountItem2 key={account.provider} icon={getIcon(account.provider)} title={account.provider} detail={account.details} />
+                <DeveloperAccountItem2 key={account.provider} icon={getIcon(account.provider)} title={account.provider} details={account.details} />
               ) : (
                 <DeveloperAccountItem key={account.provider} icon={getIcon(account.provider)} title={account.provider} detail={{ label: "Handle", value: account.handle }} />
               )
             }
             </>
           ))}
-          <DeveloperAccountItem
-            icon={<CompanyIcon />}
-            title="HackerRank"
-            detail={{ label: "Rank", value: "2560" }}
-          />
-          <DeveloperAccountItem
-            icon={<Image src="/icons/hacker.svg" alt="HackerRank" width={24} height={24} />}
-            title="Hacker Earth"
-            detail={{ label: "Rank", value: "6640" }}
-          />
-          <DeveloperAccountItem
-            icon={<DevIcon />}
-            title="Dev.to"
-            detail={{ label: "Articles", value: "25" }}
-          />
         </div>
       </div>
     </Card>
@@ -101,7 +89,7 @@ const DeveloperAccountItem = ({
 interface DeveloperAccountItem2Props {
   icon: React.ReactNode;
   title: string;
-  detail: {
+  details: {
     label: string;
     value: string;
   }[];
@@ -110,7 +98,7 @@ interface DeveloperAccountItem2Props {
 const DeveloperAccountItem2 = ({
   icon,
   title,
-  detail,
+  details,
 }: DeveloperAccountItem2Props) => {
   return (
     <DeveloperAccountCard>
@@ -125,7 +113,7 @@ const DeveloperAccountItem2 = ({
         </div>
 
         <div className="flex flex-wrap items-center justify-center mt-4 divide-x-2 divide-dev-border gap-y-2">
-          {detail.map((item) => (
+          {details.map((item) => (
             <div key={item.label} className="text-center px-3">
               <p className="text-sm font-medium leading-6 text-white font-roboto">
                 {item.value}
